@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/otaviouu/blogoo/internal/posts"
-	usercases "github.com/otaviouu/blogoo/user_cases"
+	usercases "github.com/otaviouu/blogoo/internal/use_cases"
 )
 
 type RestPostsHandler struct {

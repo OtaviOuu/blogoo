@@ -3,7 +3,7 @@ package posts
 import (
 	"time"
 
-	"github.com/otaviouu/blogoo/user_cases/dtos"
+	"github.com/otaviouu/blogoo/internal/use_cases/dtos"
 )
 
 type IPostRepo interface {

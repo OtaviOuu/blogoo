@@ -15,8 +15,6 @@ import (
 func main() {
 	dbc := sqlx.MustConnect("sqlite3", ":memory:")
 
-	log.Println("Starting server...")
-
 	postsRepo, err := db.NewPostRepository(dbc)
 
 	if err != nil {
@@ -34,5 +32,9 @@ func main() {
 		r.Get("/", postsHandler.HandleListPosts)
 	})
 
-	http.ListenAndServe(":3000", r)
+	log.Println("rodando")
+	err = http.ListenAndServe(":3000", r)
+	if err != nil {
+		log.Fatal(err)
+	}
 }

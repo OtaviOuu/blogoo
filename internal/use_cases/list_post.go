@@ -2,7 +2,7 @@ package usercases
 
 import (
 	"github.com/otaviouu/blogoo/internal/posts"
-	"github.com/otaviouu/blogoo/user_cases/dtos"
+	"github.com/otaviouu/blogoo/internal/use_cases/dtos"
 )
 
 type ListPostsUseCase struct {
