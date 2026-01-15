@@ -1,7 +1,7 @@
 package usercases
 
 import (
-	"github.com/otaviouu/blogoo/internal/posts"
+	"github.com/otaviouu/blogoo/internal/entity/posts"
 	"github.com/otaviouu/blogoo/internal/use_cases/dtos"
 )
 

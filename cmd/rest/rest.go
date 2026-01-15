@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/otaviouu/blogoo/internal/posts"
+	"github.com/otaviouu/blogoo/internal/entity/posts"
 	usercases "github.com/otaviouu/blogoo/internal/use_cases"
 )
 

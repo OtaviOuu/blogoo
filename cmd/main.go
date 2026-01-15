@@ -8,6 +8,7 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/jmoiron/sqlx"
 	_ "github.com/mattn/go-sqlite3"
+	html "github.com/otaviouu/blogoo/cmd/html"
 	rest "github.com/otaviouu/blogoo/cmd/rest"
 	"github.com/otaviouu/blogoo/internal/infra/db"
 )
@@ -27,9 +28,17 @@ func main() {
 
 	postsHandler := rest.NewRestPostsHandler(postsRepo)
 
+	r.Route("/v1/api/", func(r chi.Router) {
+		r.Route("/posts", func(r chi.Router) {
+			r.Post("/", postsHandler.HandleListPosts)
+			r.Get("/", postsHandler.HandleListPosts)
+		})
+	})
+
+	postHtmlHandler := html.NewHtmlPostsHandler(postsRepo)
+
 	r.Route("/posts", func(r chi.Router) {
-		r.Post("/", postsHandler.HandleListPosts)
-		r.Get("/", postsHandler.HandleListPosts)
+		r.Get("/", postHtmlHandler.HandleIndex)
 	})
 
 	log.Println("rodando")
